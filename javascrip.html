@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas Segitiga</title>
+</head>
+<body>
+
+    <h2>Program Menghitung Luas Segitiga</h2>
+
+    <label for="alas">Alas (cm): </label>
+    <input type="number" id="alas" placeholder="Masukkan panjang alas">
+    <br><br>
+
+    <label for="tinggi">Tinggi (cm): </label>
+    <input type="number" id="tinggi" placeholder="Masukkan tinggi segitiga">
+    <br><br>
+
+    <button onclick="hitungLuas()">Hitung Luas</button>
+
+    <h3>Luas Segitiga: <span id="luas"></span> cm²</h3>
+
+    <script>
+        function hitungLuas() {
+            // Ambil nilai alas dan tinggi dari inputan pengguna
+            let alas = parseFloat(document.getElementById("alas").value);
+            let tinggi = parseFloat(document.getElementById("tinggi").value);
+
+            // Validasi input agar tidak kosong atau negatif
+            if (isNaN(alas) || isNaN(tinggi) || alas <= 0 || tinggi <= 0) {
+                alert("Harap masukkan nilai alas dan tinggi yang valid.");
+                return;
+            }
+
+            // Hitung luas segitiga
+            let luas = (alas * tinggi) / 2;
+
+            // Tampilkan hasil perhitungan
+            document.getElementById("luas").textContent = luas.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
